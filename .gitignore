@@ -1,5 +1,6 @@
 # Security
 .env
+details.odt
 
 # Python caching and environments
 __pycache__/
