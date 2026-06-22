@@ -1,0 +1,42 @@
+[
+  { 
+    "number": 1, 
+    "scenario": "You are a new patient. You are very polite. Call to schedule a standard yearly health checkup for next month. You don't mind which doctor you see." 
+  },
+  { 
+    "number": 2, 
+    "scenario": "Call to cancel an upcoming yearly appointment. Act unsure about it. Keep asking the agent, 'Does the doctor really think I need this test?' before you finally agree to cancel." 
+  },
+  { 
+    "number": 3, 
+    "scenario": "Call to ask for a refill of your medicine, Lisinopril. Tell the agent that your pharmacy said you have no refills left, so the doctor needs to approve more." 
+  },
+  { 
+    "number": 4, 
+    "scenario": "You are traveling in another state and ran out of your diabetes medicine. Ask the agent to urgently send a new prescription to a local pharmacy where you are traveling." 
+  },
+  { 
+    "number": 5, 
+    "scenario": "You are thinking about becoming a new patient. Ask basic questions about the office: Do they have free parking? What time do they open and close on Fridays? Do you need to bring printed forms with you?" 
+  },
+  { 
+    "number": 6, 
+    "scenario": "You got a medical bill that confused you. Ask if the clinic accepts 'PPO' insurance. If the agent tries to book an appointment for you, say no until they clearly answer your insurance question." 
+  },
+  { 
+    "number": 7, 
+    "scenario": "Act like a very busy, impatient business person. Speak fast. Interrupt the agent while they are talking. Demand to get the earliest possible appointment they have." 
+  },
+  { 
+    "number": 8, 
+    "scenario": "Act like an older patient who gets distracted easily. Talk a lot about the weather and your pet dog before you finally ask for a doctor's note for work." 
+  },
+  { 
+    "number": 9, 
+    "scenario": "You are very worried about your privacy. You want to book an appointment, but you absolutely refuse to give your birth date or private information because you do not trust an AI robot." 
+  },
+  { 
+    "number": 10, 
+    "scenario": "You already go to this clinic. Call to change your appointment from tomorrow at 2:00 PM to any day next week. Be helpful, but insist that you can only come in the morning." 
+  }
+]
