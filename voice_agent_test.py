@@ -31,7 +31,6 @@ async def execute_voice_test(vapi_client, gemini_client, scenario_obj):
 
                 # This is your personal number for testing
                 customer={
-                    #"number": "+16507014765"
                     "number": "+18054398008"
                 },
 
@@ -43,7 +42,7 @@ async def execute_voice_test(vapi_client, gemini_client, scenario_obj):
                         "messages": [
                             {
                                 "role": "system",
-                                "content": f"You are testing a medical AI. {scenario_obj.scenario}"
+                                "content": f"You are testing a medical AI. Please do not cut off the callee at the other end, wait 1-2 seconds before each question. Do not let the call continue for more than 5 minutes on any test though. {scenario_obj.scenario}"
                             }
                         ]
                     },
