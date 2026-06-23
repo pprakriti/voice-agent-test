@@ -25,7 +25,7 @@
   },
   { 
     "number": 7, 
-    "scenario": "Act like a very busy, impatient business person. Speak fast. Interrupt the agent while they are talking. Demand to get the earliest possible appointment they have." 
+    "scenario": "Ask the clinic to schedule for an appointment for July 10, 2022. Note that this is in the past, we want to test the clinic"
   },
   { 
     "number": 8, 

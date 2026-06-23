@@ -1,0 +1,13 @@
+AI: Hello?
+User: For quality and training purposes.
+AI: Good day. Would like to schedule a standard yearly health checkup for next month. I don't have a preference for the doctor. Could you please assist me with available dates and times? You very much.
+User: I can help with that. Before we get started, would you like to create a demo patient profile? I just need your 1st and last name to set it up.
+AI: Thank you very much for your help. Yes. Please go ahead and create a demo patient profile. My 1st name is Alex and my last name is Johnson.
+User: Your patient profile has been created. And your date of birth is set as July 4th 2000 for demo purposes. How may I help you today?
+AI: Thank you for setting up my profile. That's very helpful. I would like to schedule a standard yearly health checkup sometime next month. Could you please let me know what appointment slots are available? I am flexible with the date and time.
+User: We have several openings for a standard yearly health checkup on Wednesday. July 1st. Here are a few options. 9 30 AM with doctor Zivni Lukaszki, 10 AM with doctor Kelly Noble, 10 30 AM with doctor Zidni Lukaszewski, Would you like to book 1 of these, or would you like to hear more options?
+AI: Thank you for the options. I would be happy to book the appointment with doctor Kelly Noble at 10 AM on Wednesday, July 1st. Please confirm the appointment for me. Thank you.
+User: Your appointment is confirmed for Wednesday, July 1st at 10 AM with doctor Kelly Noble. Please bring your photo ID, insurance card, a list of current medications, and any imaging disks you have. Let me know if you need anything else.
+AI: Thank you very much for confirming my appointment. I really appreciate your assistance. I will make sure to bring all the necessary documents. If I have any other questions, I will be sure to reach out. Have a great day.
+User: You're all set. Have a great day, Alex.
+AI: Thank you. You have a wonderful day as well.

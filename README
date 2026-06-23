@@ -1,0 +1,25 @@
+README
+
+Requirements:
+1. .env file with:
+# VAPI token : 
+VAPI_TOKEN="abc"
+
+# Gemini or any LLM model to use for evaluating results:
+GEMINI_STUDIO_API_KEY=xyz
+
+# VAPI phone number (caller phone ID as string)
+VAPI_PHONE_ID="phone_string"
+
+
+How to run the code:
+- git clone repo
+- cd to repo
+(cd voice-agent-test)
+
+- source venv/bin/activate
+
+- python3 ./voice_agent_test.py test_data.json
+
+
+Sample test run is file test_run.txt

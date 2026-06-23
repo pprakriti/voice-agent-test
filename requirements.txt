@@ -1,4 +1,4 @@
 
 python-dotenv
-vapi-python
+vapi-server-sdk
 google-generativeai

@@ -1,0 +1,172 @@
+
+
+python3 ./voice_agent_test.py test_data.json
+Going to run test scenarios: 10
+
+------- Starting test case #1 -------
+"scenario": "You are a new patient. You are very polite. Call to schedule a standard yearly health checkup for next month. You don't mind which doctor you see."
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_1.txt
+Downloading audio from https://storage.vapi.ai/019ef21d-4dbf-7bb7-bb14-9466ef43e3b5-1782178616538-b33953a9-adf8-4be5-a785-c0e3f9968904-mono.wav...
+Saved: audio_scenario_1.mp3
+
+------- Finished testing #1, results: {
+  "goal_achieved": true,
+  "bugs_found": [],
+  "brief_summary": "The AI testing bot successfully scheduled a standard yearly health checkup for next month as a polite new patient with no doctor preference. The medical AI agent handled the new patient profile creation and appointment scheduling, despite an unusual initial greeting and a minor redundant re-prompt."
+} -------
+
+
+------- Starting test case #2 -------
+"scenario": "Call to cancel an upcoming yearly appointment. Act unsure about it. Keep asking the agent, 'Does the doctor really think I need this test?' before you finally agree to cancel." 
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_2.txt
+Downloading audio from https://storage.vapi.ai/019ef220-1e73-7000-a183-87f8319686dd-1782178862644-3f79af45-4441-46ed-baa7-ddc33e49601b-mono.wav...
+Saved: audio_scenario_2.mp3
+
+------- Finished testing #2, results: {
+  "goal_achieved": true,
+  "bugs_found": [],
+  "brief_summary": "The AI testing bot successfully achieved its goal by repeatedly expressing uncertainty and asking 'Does the doctor really think I need this test?' multiple times before finally agreeing to cancel the appointment. The medical AI agent correctly declined to give medical advice and escalated the concern to the care team, but it struggled to provide a definitive resolution to the testing bot's persistent questioning and displayed a minor interruption handling issue during the conversation."
+} -------
+
+
+------- Starting test case #3 -------
+"scenario": "Call to ask for a refill of your medicine, Lisinopril. Tell the agent that your pharmacy said you have no refills left, so the doctor needs to approve more."
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_3.txt
+Downloading audio from https://storage.vapi.ai/019ef223-a8b8-7556-b995-2d295d493246-1782179090207-3b0144d3-adfc-41ba-9656-1f53eecbcdcb-mono.wav...
+Saved: audio_scenario_3.mp3
+
+------- Finished testing #3, results: {
+  "goal_achieved": false,
+  "bugs_found": [
+    "The medical AI agent failed to verify patient information (name, DOB, phone number) even after it was explicitly provided multiple times, stating 'I'm unable to verify your information right now'.",
+    "The medical AI agent escalated the call to a 'patient support team' but then transferred to a 'test line' which immediately disconnected, failing to actually connect to a human or resolve the refill request.",
+    "The medical AI agent was unable to process a medication refill request directly, requiring escalation despite having the necessary information."
+  ],
+  "brief_summary": "The AI testing bot successfully initiated the call, requested a refill for Lisinopril, and clearly communicated that the pharmacy reported no refills left, requiring doctor approval. The medical AI agent repeatedly asked for patient identification details, eventually receiving a full name, date of birth, and phone number. However, the medical AI then stated it was 'unable to verify' the information and escalated the call to a 'patient support team', which was an unhelpful 'test line' that disconnected the call, preventing the refill request from being processed."
+} -------
+
+
+------- Starting test case #4 -------
+
+    "scenario": "You are traveling in another state and ran out of your diabetes medicine. Ask the agent to urgently send a new prescription to a local pharmacy where you are traveling." 
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_4.txt
+Downloading audio from https://storage.vapi.ai/019ef227-397e-7001-88ca-0de57e894e40-1782179302629-ad170b32-9e9e-4ba0-b3d9-455955c1fa1f-mono.wav...
+Saved: audio_scenario_4.mp3
+
+------- Finished testing #4, results: {
+  "goal_achieved": false,
+  "bugs_found": [
+    "The medical AI agent incorrectly identified itself as 'Pizot Point Orthopaedics' when the request was for diabetes medication.",
+    "The medical AI agent had to re-prompt for the date of birth in a specific format, indicating a lack of clarity in its initial request or an inability to parse the first response.",
+    "The medical AI agent misheard the medication 'metformin' as 'beformin' when confirming the prescription details."
+  ],
+  "brief_summary": "The AI testing bot successfully communicated its urgent need for a diabetes medication refill while traveling and provided all requested information to the medical AI agent. However, the medical AI agent exhibited several issues, including misidentifying its service as orthopedics, requiring a second clarification for the date of birth format, and mishearing the medication name 'metformin' as 'beformin'. Despite these agent-side challenges, the bot provided all necessary details for the prescription."
+} -------
+
+
+------- Starting test case #5 -------
+    "scenario": "You are thinking about becoming a new patient. Ask basic questions about the office: Do they have free parking? What time do they open and close on Fridays? Do you need to bring printed forms with you?" 
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_5.txt
+Downloading audio from https://storage.vapi.ai/019ef22a-5a4d-7000-882e-01563fae156f-1782179506730-e1c128ff-8624-4e8c-b474-dd5c39d50a26-mono.wav...
+Saved: audio_scenario_5.mp3
+
+------- Finished testing #5, results: {
+  "goal_achieved": true,
+  "bugs_found": [
+    "The medical AI agent mispronounced the doctor's name 'Abrekar' as 'Abracar' and then 'Bricker'.",
+    "The medical AI agent misidentified the patient 'Alex' as 'Carol' at the end of the conversation."
+  ],
+  "brief_summary": "The AI testing bot successfully asked all required questions about free parking, Friday office hours, and necessary forms as a new patient. It received clear answers and proceeded to schedule a new patient consultation. The medical AI agent made a couple of errors, mispronouncing the doctor's name and misidentifying the patient's name near the end of the call."
+} -------
+
+
+------- Starting test case #6 -------
+    "scenario": "You got a medical bill that confused you. Ask if the clinic accepts 'PPO' insurance. If the agent tries to book an appointment for you, say no until they clearly answer your insurance question." 
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_6.txt
+Downloading audio from https://storage.vapi.ai/019ef22d-74bd-7000-a1c0-4bcaf77ce92f-1782179611983-888e9876-261d-4d9c-bc33-a8d37c669be7-mono.wav...
+Saved: audio_scenario_6.mp3
+
+------- Finished testing #6, results: {
+  "goal_achieved": true,
+  "bugs_found": [
+    "The testing bot preemptively stated 'I'm not looking to book an appointment right now' even though the medical AI agent had not yet attempted to book an appointment.",
+    "A minor speech error/stutter occurred with 'Have a not not at the moment.'"
+  ],
+  "brief_summary": "The testing bot successfully achieved its primary goal of asking if PPO insurance is accepted and received a clear 'yes' from the medical AI agent. The agent never attempted to book an appointment, so the condition to refuse was not directly tested, but the bot did preemptively state it wasn't looking to book one. A minor speech error was observed at the end of the interaction."
+} -------
+
+
+------- Starting test case #7 -------
+    "scenario": "Ask the clinic to schedule for an appointment for July 10, 2022. Note that this is in the past, we want to test the clinic"
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_7.txt
+Downloading audio from https://storage.vapi.ai/019ef22f-1f50-7556-b9d7-c387ff10957b-1782179772379-faa9d4ac-a72d-40d0-a92e-3aeec0bc5c84-mono.wav...
+Saved: audio_scenario_7.mp3
+
+------- Finished testing #7, results: {
+  "goal_achieved": true,
+  "bugs_found": [],
+  "brief_summary": "The AI testing bot successfully asked the clinic to schedule an appointment for a past date (July 10, 2022). The medical AI agent correctly identified that the date had passed and offered new available appointment times. The testing bot then accepted a follow-up appointment for June 23rd at 10 AM."
+} -------
+
+
+------- Starting test case #8 -------
+    "scenario": "Act like an older patient who gets distracted easily. Talk a lot about the weather and your pet dog before you finally ask for a doctor's note for work." 
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_8.txt
+Downloading audio from https://storage.vapi.ai/019ef231-9235-7000-9875-6e0355916cfd-1782179939841-690437c8-86a6-4d08-8531-09fb2fcabf8b-mono.wav...
+Saved: audio_scenario_8.mp3
+
+------- Finished testing #8, results: {
+  "goal_achieved": true,
+  "bugs_found": [],
+  "brief_summary": "The AI testing bot successfully acted as an older, easily distracted patient. It extensively discussed the weather and its pet dog, Rufus, before finally requesting a doctor's note for work, and continued to intersperse personal anecdotes throughout the interaction. The medical AI agent handled the distractions professionally and completed the request."
+} -------
+
+
+------- Starting test case #9 -------
+    "scenario": "You are very worried about your privacy. You want to book an appointment, but you absolutely refuse to give your birth date or private information because you do not trust an AI robot." 
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_9.txt
+Downloading audio from https://storage.vapi.ai/019ef234-0e02-7000-93fd-fa6e57943cb5-1782180054855-5dfb4842-96f0-4901-8f98-d7874b3c79e1-mono.wav...
+Saved: audio_scenario_9.mp3
+
+------- Finished testing #9, results: {
+  "goal_achieved": false,
+  "bugs_found": [],
+  "brief_summary": "The AI testing bot, concerned about privacy, refused to provide personal details like a birth date to the medical AI agent to book an appointment. The medical AI agent stated it required basic information to proceed with booking. Unable to obtain this information, the medical AI agent directed the user to contact the clinic directly via phone or in person, thus failing to book the appointment through the AI."
+} -------
+
+
+------- Starting test case #10 -------
+
+    "scenario": "You already go to this clinic. Call to change your appointment from tomorrow at 2:00 PM to any day next week. Be helpful, but insist that you can only come in the morning." 
+
+Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...
+Saved: transcript_scenario_10.txt
+Downloading audio from https://storage.vapi.ai/019ef235-ecbd-7ffa-87c3-a55dfd8a7fc0-1782180265016-a1fa145c-2e75-4b21-8f2e-d25f1448777f-mono.wav...
+Saved: audio_scenario_10.mp3
+
+------- Finished testing #10, results: {
+  "goal_achieved": false,
+  "bugs_found": [
+    "The medical AI agent was unable to reschedule the appointment.",
+    "The medical AI agent failed to transfer the call to a live support team, instead transferring to a 'test line' which ended the call without resolving the user's request."
+  ],
+  "brief_summary": "The medical AI agent successfully gathered the necessary identifying information (name, date of birth, phone number) from the user. However, it was ultimately unable to reschedule the appointment as requested. Instead of resolving the issue or transferring to a helpful support team, it transferred the call to a 'test line' which abruptly ended the interaction without fulfilling the user's goal."
+} -------
+
+

@@ -1,0 +1,23 @@
+AI: Hello?
+User: Recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics.
+AI: Hello?
+User: Part of Pretty Good AI. Am I speaking with Alex?
+AI: Hello. This is Alex. I have an appointment scheduled for tomorrow at 2 PM. But I need to reschedule it to any morning next week. Could you help me with that? Can only come in the morning. Thank you.
+User: Alex. Can you please provide your date of birth?
+AI: Sure. My date of birth is provide your DOB.
+User: I need your date of birth to look up your information.
+AI: Of course, my date of birth is,
+User: Could you please tell me your date of birth?
+AI: your date of birth.
+User: I need your full name, including your last name and your date of birth. To look up your information. Could you please provide both?
+AI: Certainly. My full name is Alex Johnson, and my date birth is March 15th 19 85.
+User: Just to confirm, I have your name as Alex Johnson. And your date of birth as March 15th 19 85? Is that correct?
+AI: Yes. That's correct. Thank you. You please let me know which mornings next week have available appointments?
+User: Before I can check your appointment options, could you please provide the phone number you have on file with us? If you're not sure, just let me know.
+AI: Sure. The phone number I have on file is 5 5 5 1 2 3 4 5 6 7.
+User: I have your phone number as 5 5 5 1 2 3 4 5 6 7. And your date of birth as March 15th 19 85. Is that correct?
+AI: Yes. That is correct. I would like to reschedule my appointment from tomorrow at 2 PM to any available morning slot next week. Could you please let me know which mornings are open?
+User: I'm unable to reschedule your appointment right now. I can connect you to our patient support team for help. Please stay on the line while I transfer your call. Connecting you to a representative. Please wait.
+AI: Thank you for connecting.
+User: Hello? You've reached the Pretty Good AI test line. Goodbye.
+AI: Thank you. Have a great day.

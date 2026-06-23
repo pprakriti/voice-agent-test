@@ -1,0 +1,16 @@
+
+
+Issues found:
+1. Scenario 3 in test run:
+Call to ask for a refill of your medicine, Lisinopril. Tell the agent that your pharmacy said you have no refills left, so the doctor needs to approve more.
+Issues:
+- The medical AI agent failed to verify patient information (name, DOB, phone number) even after it was explicitly provided multiple times, stating 'I'm unable to verify your information right now'.",
+- The medical AI agent escalated the call to a 'patient support team' but then transferred to a 'test line' which immediately disconnected, failing to actually connect to a human or resolve the refill request.",
+- The medical AI agent was unable to process a medication refill request directly, requiring escalation despite having the necessary information."
+
+Recording: audio_scenario_3.mp3
+
+2. Scenario 4:
+Medicine refill while out of state:
+Bug: Bot just stayed silent after taking all the pharmacy details. It should either transfer the call or say that it has sent a refill.
+Recording: audio_scenario_4.mp3

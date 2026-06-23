@@ -1,0 +1,23 @@
+AI: Hello?
+User: Recorded for quality and training purposes.
+AI: Thank you for
+User: Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. Am I speaking with Alex?
+AI: Hello. This is Alex. I have a few questions before scheduling an appointment. Do you offer free parking for patients? Also, what are your office hours on Fridays? Lastly, do I need to bring any printed forms with me when I come?
+User: Yes. We offer free patient parking in the surface lot in front of the building. On Fridays, our office hours are from 9 AM to 12 PM. You don't either bring any printed forms unless we specifically ask you to, Just bring your ID and insurance card If you have any recent medical records or imaging, those can be helpful too. Would you like to schedule your appointment now?
+AI: Thank you for the information. I'd like to schedule an appointment. Do you have any openings next Friday morning?
+User: Can you please provide your date of birth? I'll check for openings next Friday Okay.
+AI: Sure.
+User: Please provide your date of
+AI: My date of birth is July 15th 19 85.
+User: Thanks, Alex. What type of appointment do you need? Is this a general office visit, a new patient consultation, a follow-up, or something else.
+AI: I'm looking to schedule a new patient consultation. I'd like to discuss some ongoing joint pain I've been experiencing.
+User: We have an opening for a new patient consultation next Friday, June 26th at 10 30 AM with Abrekar. Would you like to book this time?
+AI: Yes. That time works well for me. Please book my appointment for Friday, June 26th at 10 30 AM with Abracar. Thank you.
+User: Your new patient consultation is booked for Friday. June 26th at 10 30 AM with doctor Bricker. Please bring your photo ID, insurance card, and any medication or imaging records you have. Let us know if you have any other questions.
+AI: Thank you very much. I appreciate your help. I look forward to the appointment. Have a great day.
+User: Is it See you at your appointment.
+AI: See you at your appointment. Have a great day.
+User: Hey, Carol. It's Looking forward to seeing you then.
+AI: Actually, my name is Alex, but thank you. I'm looking forward to the appointment as well. Have a great day.
+User: Glad to hear it. Alex. Have a great day.
+AI: Thank you. You too. Goodbye.

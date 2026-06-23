@@ -1,0 +1,19 @@
+AI: Hello?
+User: May be recorded for quality and training purposes.
+AI: Hello. I am
+User: Thanks for calling Pizot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?
+AI: Hi. Yes. This is Alex. I'm currently traveling out of state and have run out of my diabetes medication. Could you please urgently send a new prescription to a local pharmacy where I'm staying? Thank you.
+User: Can you please provide your date of birth?
+AI: Sure. My date of birth is insert your date of birth here.
+User: I need your date of birth in a month, day, and year format. Could you please say your full date of birth?
+AI: Certainly. My date of birth is March the 15th 19 85.
+User: Which diabetes medication do you need refilled today? Please tell me the name of the medication.
+AI: I need a refill for metformin.
+User: How many days of beformin do you have left? Or are you already out?
+AI: I'm already out of metformin and need the prescription urgently.
+User: I have your callback number as 6 0 1 5 3 1 8 2 0 5? Is that correct?
+AI: Yes. That is correct. You can reach me at 6 0 1 5 3 1 8 2 0 5.
+User: Could you please provide the name of the pharmacy you want to use for your medication? If you know the address, city, or any details, like cross streets or nearby stores, that would help too. You have their phone or fax number, please share that as well.
+AI: Yes. Please send the prescription to Main Street Pharmacy located at 1 23 Main Street Springfield. It's near the corner of Main and Elm Streets. Their phone number is 5 5 5 1 2 3 4 5 6 7. Thank you.
+User: I have Main Street Pharmacy, at 1 23 Main Street, in Springfield. With the phone number 5 5 5 1 2 3 4 5 6 7. Could you please tell me the state or ZIP code for this pharmacy? That will help make sure your prescription goes to the right place.
+AI: The pharmacy is in Illinois, and the ZIP code is 6 2 7 0 1.

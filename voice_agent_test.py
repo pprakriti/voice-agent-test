@@ -8,7 +8,8 @@ import urllib.request
 
 from vapi import AsyncVapi
 import os
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 class ScenarioData:
     def __init__(self, number, scenario):
@@ -18,32 +19,38 @@ class ScenarioData:
     def __repr__(self):
         return f"ScenarioData(number={self.number}, scenario='{self.scenario}')"
 
-async def execute_voice_test(vapi_client, gemini_model, scenario_obj):
+async def execute_voice_test(vapi_client, gemini_client, scenario_obj):
     """ Test by making a call to agent and prompt the scneario"""
 
     print(f"\n------- Starting test case #{scenario_obj.number} -------\n")
 
 
     response = await vapi_client.calls.create(
-            assistant={
-                "firstMessage": "Hello?", # Gets the target AI to start talking
-                "model": {
-                    "provider": "openai",
-                    "model": "gpt-4o-mini",
-                    "messages": [
-                        {
-                            "role": "system",
-                            "content": f"You are testing a medical AI. {scenario_obj.scenario}"
+                # which number is doing the dialing
+                phone_number_id=os.getenv("VAPI_PHONE_ID"),
+
+                # This is your personal number for testing
+                customer={
+                    #"number": "+16507014765"
+                    "number": "+18054398008"
+                },
+
+                assistant={
+                    "firstMessage": "Hello?",
+                    "model": {
+                        "provider": "openai",
+                        "model": "gpt-4o-mini",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": f"You are testing a medical AI. {scenario_obj.scenario}"
                             }
                         ]
                     },
-                "voice": {
-                    "provider": "11labs",
-                    "voiceId": "bIHbv24MWmeRgasZH58o" # A default voice
+                    "voice": {
+                        "provider": "11labs",
+                        "voiceId": "bIHbv24MWmeRgasZH58o"
                     }
-                },
-            customer={
-                "number": "+18054398008"
                 }
             )
     # call_id returned right away, need to poll for results
@@ -53,15 +60,22 @@ async def execute_voice_test(vapi_client, gemini_model, scenario_obj):
     call_data = await vapi_client.calls.get(call_id)
 
     # call can fail or error too
-    while call_data.status not in ['ended', 'failed', 'errored']:
+    while str(call_data.status) not in ['ended', 'failed', 'errored']:
         # sleep until call ended
         await asyncio.sleep(10)
         # Fetch the updated state for next loop iteration
         call_data = await vapi_client.calls.get(call_id)
 
-    # call ended now
-    transcript = call_data.transcript
-    recording_url = call_data.recording_url
+    # call ended now but stitching takes time
+    print("Call ended! Waiting 5 seconds for Vapi to generate the recording and transcript...")
+    await asyncio.sleep(5)
+    call_data = await vapi_client.calls.get(call_id)
+
+    # use getattr extract using both camelCase and snake_cas without crashing, gives None
+    transcript = getattr(call_data, 'transcript', "No transcript available.")
+    recording_url = getattr(call_data, 'recordingUrl', getattr(call_data, 'recording_url', None))
+    if not recording_url:
+        print("Warning: no mp3 url found")
 
     # save transcript + recording mp3
     transcript_file = f"transcript_scenario_{scenario_obj.number}.txt"
@@ -77,16 +91,22 @@ async def execute_voice_test(vapi_client, gemini_model, scenario_obj):
         audio_file = f"audio_scenario_{scenario_obj.number}.mp3"
         print(f"Downloading audio from {recording_url}...")
 
+        # helper function to inject the browser header
+        def download_audio_with_headers(url, filename):
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req) as response, open(filename, 'wb') as out_file:
+                out_file.write(response.read())
         # to_thread avoid synchronous download from blocking async event loop
 
-        await asyncio.to_thread(urllib.request.urlretrieve, recording_url, audio_file)
+        # safe download function in the background thread
+        await asyncio.to_thread(download_audio_with_headers, recording_url, audio_file)
         print(f"Saved: {audio_file}")
 
-    graded_response = await grade_reply(transcript, scenario_obj.scenario, gemini_model)
+    graded_response = await grade_reply(transcript, scenario_obj.scenario, gemini_client)
     print(f"\n------- Finished testing #{scenario_obj.number}, results: {graded_response} -------\n")
 
 
-async def grade_reply(transcript, scenario, model):
+async def grade_reply(transcript, scenario, client):
     ''' Use gemini to evaluate the result '''
     prompt = f"""
         Review this transcript between an AI testing bot and a medical AI agent.
@@ -101,14 +121,15 @@ async def grade_reply(transcript, scenario, model):
         - "brief_summary": string
         """
 
-    response = await model.generate_content_async(prompt, generation_config={"response_mime_type": "application/json"})
-
+    response = await client.aio.models.generate_content(model='gemini-2.5-flash', contents=prompt, 
+                                                        config=types.GenerateContentConfig(response_mime_type="application/json"))
     return response.text
 
 
 async def main():
     # api keys load
-    load_dotenv()
+    #load_dotenv()
+    load_dotenv(override=True)
     # read the json and save the data
     if len(sys.argv) < 2:
         print(f"Pass test file name in json: current: {len(sys.argv) - 1}")
@@ -125,16 +146,15 @@ async def main():
         obj = ScenarioData(number=item["number"], scenario=item["scenario"])
         scenario_list.append(obj)
 
-    vapi_client = AsyncVapi(api_key=os.getenv("VAPI_TOKEN"))
+    vapi_client = AsyncVapi(token=os.getenv("VAPI_TOKEN"))
 
     # global key
-    genai.configure(api_key=os.getenv("GEMINI_STUDIO_API_KEY"))
-    gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+    gemini_client = genai.Client(api_key=os.getenv("GEMINI_STUDIO_API_KEY"))
 
     #print(scenario_list)
     print(f"Going to run test scenarios: {len(scenario_list)}")
     for testcase in scenario_list:
-        await execute_voice_test(vapi_client, gemini_model, testcase)
+        await execute_voice_test(vapi_client, gemini_client, testcase)
         await asyncio.sleep(1)
 
 

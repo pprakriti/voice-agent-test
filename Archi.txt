@@ -1,0 +1,35 @@
+
+# Overview of automated test system:
+The automated voice testing system is an asynchronous Python application designed to evaluate a target medical AI agent using simulated outbound calls.
+ It uses:
+1. Vapi: which acts as the real-time "tester". The script uses the Vapi Server SDK to dispatch calls from a provisioned virtual number to the medical AI's phone line.
+2. Google Gemini: which acts as the offline evaluator. 
+
+- Test file:
+A JSON file of test scenarios of format, e.g.:
+[
+  { 
+    "number": 1, 
+    "scenario": "You are a new patient. You are very polite. Call to schedule a standard yearly health checkup for next month. You don't mind which doctor you see." 
+  },
+]
+ 
+
+During the call, Vapi orchestrates an OpenAI gpt-4o-mini model and an ElevenLabs voice to dynamically simulate a patient based on the specific test scenario.
+
+An asynchronous design using asyncio was used to efficiently manage I/O-bound operations. 
+Instead of maintaining persistent WebSocket connections, it uses a non-blocking polling mechanism to track call states, ensuring stability even during extended interactions. To prevent the asynchronous event loop from blocking during large file transfers, synchronous tasks like audio downloading are offloaded to background threads. 
+
+
+# System Code Flow
+Below is the logical execution path for each scenario in the test suite:
+
+- Initialization: The script loads environment variables (API keys, Vapi Phone ID) and parses the test_data.json file into a list of ScenarioData objects.
+
+- Call Dispatch: vapi_client.calls.create() is triggered, initiating an outbound call. It passes the scenario text into the system prompt of Vapi's assistant model so it knows exactly how to behave.
+
+- Asynchronous Polling: A while loop continuously fetches the call state (vapi_client.calls.get()) and yields control via asyncio.sleep() until the status registers as ended, failed, or errored.
+
+- Data Extraction & Buffers: Once the call ends, the script pauses for 5 seconds to allow Vapi's servers to finalize the media files. It safely extracts the transcript using getattr fallbacks and offloads the .mp3 download to a background thread using a custom browser header to bypass CDN security blocks.
+
+- LLM Evaluation: The finalized text transcript, along with the original scenario goal, is passed to gemini_client.aio.models.generate_content(). Gemini acts as the grader, evaluating if the medical AI handled the patient correctly and outputting a structured JSON report.

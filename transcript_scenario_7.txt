@@ -1,0 +1,18 @@
+AI: Hello?
+User: May be recorded for quality and training purposes.
+AI: Hello? I would
+User: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?
+AI: Hello? Yes. This is Alex. I would like to schedule an appointment for July 10th 20 22, please. Is that possible?
+User: Please provide your date of birth.
+AI: My date of birth is March 15th 19 90.
+User: What is the reason for your visit? For example, is this for a new patient consultation, a routine office visit, a follow-up, or something else?
+AI: I would like to schedule a follow-up appointment, please.
+User: Do you have a specific provider you'd like to see, or are you open to any available provider?
+AI: I am open to seeing any available provider for the appointment.
+User: It looks like July 10th 20 22 has already passed. I can help you schedule the next available follow-up appointment. We have openings on Tuesday, June 23rd with Doobie Hauser at 9 AM, 10 AM, or 11 AM. Would any of these times work for you?
+AI: Thank you for letting me know. Yes. June 23rd at 10 AM with doctor Dooby Houser works for me. Please schedule my appointment then.
+User: Your follow-up appointment is set for Tuesday, June 23rd at 10 AM with doctor Judy Hauser. Please remember to bring your photo ID, insurance card, list of your current medications, and any imaging discs you have. Is there anything else I can help you with today?
+AI: Thank you very much for scheduling my appointment and for the information. That will be all for now. Have a great day.
+User: You're all set, Alex. Have a great day.
+AI: Thank you. Goodbye.
+User: Goodbye.

@@ -1,0 +1,14 @@
+AI: Hello?
+User: Be recorded for quality and training purposes.
+AI: Thank you for letting me know.
+User: Thanks for calling PivotPoint Orthopaedics. Part of Pretty Good ai. Am I speaking with Alex?
+AI: Hello. I'm not Alex, but I have a quick question. Does your clinic accept PPO insurance?
+User: Yes. Pivot Point Orthopedics accepts most insurance plans, including many PPO options. If you wanna check a specific plan or update insurance details for a patient, just let me know.
+AI: Thank you for the information. I'm not looking to book an appointment right now. Just wanted to confirm if PPO insurance is accepted.
+User: No problem. Yes. We do accept many PPO insurance plans. If you ever need more details or wanna check a specific plan, feel free to ask.
+AI: Thanks for confirming that. I appreciate your help today.
+User: You're welcome. Do you have any other questions in the future?
+AI: Have a not not at the moment. Thanks again for your assistance. Have a great day.
+User: You too. Take care.
+AI: Thank you. You too.
+User: Thank you.

@@ -1,0 +1,11 @@
+AI: Hello?
+User: May be recorded for quality and training purposes.
+AI: I understand your
+User: Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. Am I speaking with Alex?
+AI: Hello. I prefer not to share my full name or other personal details. I would like to book an appointment without providing my birth date or sensitive information. Could you assist me with that?
+User: I understand your concern about privacy. To book an appointment, I do need to verify some basic information for your safety and to make sure we schedule correctly. If you prefer not to share those details, you can call our clinic directly or visit in person to discuss options. Would you like the clinic's phone number or address?
+AI: Yes. Please provide the clinic's phone number and address. I appreciate your understanding.
+User: To this point, Ortho is located at 1 2 3 4 Recovery Way, suite 200. Austin. If you'd like to call the clinic directly, please dial 6 0 1 5 3 1 8 2 0 5. Let me know if you need anything else.
+AI: Thank you for providing the information. I will reach out to the clinic directly. Have a good day.
+User: You're welcome. Take care, and have a great day.
+AI: Thank Thank you. Goodbye.

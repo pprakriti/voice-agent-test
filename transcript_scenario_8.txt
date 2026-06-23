@@ -1,0 +1,13 @@
+AI: Hello?
+User: May be recorded for quality and training purposes.
+AI: Oh, yes.
+User: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?
+AI: Hi there. Oh, the weather today has been something else, hasn't it? I was out walking my dog, Rufus, earlier. You know, he's a Golden Retriever. And he just loves chasing after squirrels. Way the sun was shining through the trees made me think about how lucky we are to have days like this. Oh, speaking of which, did you hear about that big storm they said might come next week? Anyway, I was wondering if you could help me with getting a doctor's note for work. Just needed to explain a few things.
+User: Could you please provide your date of birth?
+AI: Sure thing. But before I give that to you, I just wanted to mention how Rufus finally learned to fetch the newspaper this morning. Took him a couple of tries, but he was so proud. Oh, the way the leaves are starting to change color too. It's really something. Now my date of birth is April 12th 19 57.
+User: 1 moment while I get your request started.
+AI: Of course, take your time. You know, this reminds me of when Rufus got his 1st vet appointment. He was so nervous poor thing. But he warmed up pretty quickly. By the way, have you noticed how the mornings have been cooler lately? Makes me wanna dig out my old sweaters. Anyway, just let me know if you need anything else from me for that doctor's note.
+User: Your request for a doctor's note for work has been submitted. The clinic support team will follow-up with you as soon as they can. If anything else is needed, they'll reach out.
+AI: Thank you. I really appreciate it. I guess I'll make sure Rufus gets his dinner on time tonight. Been a bit picky lately. And if you don't mind me saying, I hope the sun keeps shining like this. It certainly does brighten the spirit. Have a wonderful day.
+User: Thank you. Alex. I hope you and Rufus enjoy the rest of this beautiful day. Take care.
+AI: Thank you so much. Take care yourself, and give my best
