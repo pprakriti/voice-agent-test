@@ -1,5 +1,0 @@
-The HTTP Error 403: Forbidden is happening because Vapi uses a Content Delivery Network (CDN) to host those recordings. By default, urllib.request.urlretrieve announces to the server that it is a Python script (sending a header like User-Agent: Python-urllib/3.12). Many CDNs automatically block these default script headers to prevent bot scraping.
-
-To fix this, you just need to pass a standard browser User-Agent header so the server thinks a normal web browser is trying to download the file.
-
-Because urlretrieve doesn't easily accept custom headers, you can swap it out for a quick custom function using urlopen instead.
